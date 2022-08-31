@@ -70,6 +70,39 @@ public class LinkedList<T> {
         }
     }
 
+    // Sedgewick 1.3.20
+    public void delete(int k) {
+        if (k < length) {
+            Node<T> tmp = this.head;
+
+            for (int i = 0; i < k-1; i++) {
+                tmp = tmp.getNext();
+            }
+
+            if (k == length - 1) {
+                tmp.setNext(null);
+            } else {
+                tmp.setNext(tmp.getNext().getNext());
+            }
+
+            length--;
+        }
+    }
+
+    // Sedgewick 1.3.21
+    public boolean find(T data) {
+        Node<T> tmp = this.head;
+
+        while(tmp != null) {
+            if (tmp.getValue() == data) {
+                return true;
+            }
+            tmp = tmp.getNext();
+        }
+
+        return false;
+    }
+
     public int getLength() {
         return this.length;
     }
