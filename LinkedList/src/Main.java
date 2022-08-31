@@ -13,5 +13,11 @@ public class Main {
         System.out.println(ll);
         System.out.println(ll.getLength());
 
+        // create new empty linked list with head = null
+        LinkedList<Integer> ll2 = new LinkedList<>();
+
+        System.out.println(ll2);
+        System.out.println(ll2.getLength());
+
     }
 }

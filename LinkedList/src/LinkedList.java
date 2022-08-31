@@ -64,7 +64,10 @@ public class LinkedList<T> {
     }*/
 
     public void removeHead() {
-        this.head = this.head.getNext();
+        if (head != null) {
+            this.head = this.head.getNext();
+            this.length--;
+        }
     }
 
     public int getLength() {
@@ -73,7 +76,7 @@ public class LinkedList<T> {
 
     @Override
     public String toString() {
-        String s = "";
+        String s = "LinkedList: ";
 
         Node<T> tmp = this.head;
 
